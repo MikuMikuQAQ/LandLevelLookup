@@ -5,21 +5,21 @@ MVVM项目demo，包含了网络请求，数据库查询、插入、更新，使
 ###
 可以给大家参考参考~
 
-##使用组件
+## 使用组件
 
-###Androidx Room
+### Androidx Room
 
-###Androidx Navigation
+### Androidx Navigation
 
-###Androidx Paging
+### Androidx Paging
 
-###Androidx Recyclerview
+### Androidx Recyclerview
 
-###Retrofit2
+### Retrofit2
 
-###RxAndroid / RxJava
+### RxAndroid / RxJava
 
-###Gson
+### Gson
 
 ##
 
