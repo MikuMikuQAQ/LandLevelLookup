@@ -1,18 +1,28 @@
 # LandLevelLookup
 
 MVVM项目demo，包含了网络请求，数据库查询、插入、更新，使用了Android Jetpack，网上相关的项目有很多，但都是kotlin项目，这次使用JAVA语言写~
+
 ###
 可以给大家参考参考~
 
 ##使用组件
+
 ###Androidx Room
+
 ###Androidx Navigation
+
 ###Androidx Paging
+
 ###Androidx Recyclerview
+
 ###Retrofit2
+
 ###RxAndroid / RxJava
+
 ###Gson
+
 ##
+
 ## License
 
     Copyright 2019 MikuMikuQAQ Inc.
