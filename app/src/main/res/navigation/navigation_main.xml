@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_main"
+            app:startDestination="@id/provinceFragment">
+
+    <fragment
+            android:id="@+id/cityFragment"
+            android:name="com.demo.pagingwithnetwork.ui.city.CityFragment"
+            android:label="fragment_city"
+            tools:layout="@layout/fragment_city">
+        <action android:id="@+id/action_cityFragment_to_countyFragment" app:destination="@id/countyFragment"/>
+        <argument android:name="provinceId" app:argType="integer" android:defaultValue="-1"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/countyFragment"
+            android:name="com.demo.pagingwithnetwork.ui.county.CountyFragment"
+            android:label="fragment_county"
+            tools:layout="@layout/fragment_county">
+        <argument android:name="provinceId" app:argType="integer" android:defaultValue="-1"/>
+        <argument android:name="cityId" app:argType="integer" android:defaultValue="-1"/>
+    </fragment>
+
+    <fragment
+            android:id="@+id/provinceFragment"
+            android:name="com.demo.pagingwithnetwork.ui.province.ProvinceFragment"
+            android:label="fragment_province"
+            tools:layout="@layout/fragment_province">
+        <action android:id="@+id/action_provinceFragment_to_cityFragment" app:destination="@id/cityFragment"/>
+    </fragment>
+
+</navigation>
