@@ -65,8 +65,6 @@ public class CityRepository {
                 for (City m:(List<City>)network.getAllCity(provinceId)) {
                     cities.add(new City(provinceId,m.getCityCode(),m.getCityName()));
                 }
-                //cities.addAll((List<City>)network.getAllCity(provinceId));
-                Log.e("CityRepository", "getAllCity: " + cities.size() );
                 cityDao.insert(cities);
             } catch (Exception e) {
                 if (cities != null && cities.size() > 0) cityDao.update(cities);

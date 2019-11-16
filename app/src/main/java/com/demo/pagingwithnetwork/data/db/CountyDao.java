@@ -7,24 +7,26 @@ import com.demo.pagingwithnetwork.data.model.County;
 
 import java.util.List;
 
+import static androidx.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface CountyDao {
 
-    @Query("SELECT * FROM table_county WHERE cityId = :id")
+    @Query("SELECT * FROM table_county WHERE cityId == :id")
     DataSource.Factory<Integer, County> getAllCounty(int id);
 
-    @Query("SELECT * FROM table_city WHERE id = :cityId")
+    @Query("SELECT * FROM table_city WHERE id == :cityId")
     City getCity(int cityId);
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     void insert(County county);
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     void insert(List<County> counties);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update(onConflict = REPLACE)
     void update(List<County> counties);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update(onConflict = REPLACE)
     void update(County county);
 }

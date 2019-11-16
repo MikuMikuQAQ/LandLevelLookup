@@ -6,6 +6,8 @@ import com.demo.pagingwithnetwork.data.model.Province;
 
 import java.util.List;
 
+import static androidx.room.OnConflictStrategy.REPLACE;
+
 @Dao
 public interface ProvinceDao {
 
@@ -15,15 +17,15 @@ public interface ProvinceDao {
     @Insert
     void insert(Province province);
 
-    @Insert
+    @Insert(onConflict = REPLACE)
     void insert(List<Province> provinces);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update(onConflict = REPLACE)
     void update(List<Province> provinces);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update(onConflict = REPLACE)
     void update(Province province);
 
-    @Update(onConflict = OnConflictStrategy.REPLACE)
+    @Update(onConflict = REPLACE)
     void update(Province... province);
 }

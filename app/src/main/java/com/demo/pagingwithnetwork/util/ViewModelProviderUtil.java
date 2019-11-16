@@ -1,5 +1,6 @@
 package com.demo.pagingwithnetwork.util;
 
+import com.demo.pagingwithnetwork.BaseApplication;
 import com.demo.pagingwithnetwork.data.CityRepository;
 import com.demo.pagingwithnetwork.data.CountyRepository;
 import com.demo.pagingwithnetwork.data.ProvinceRepository;
@@ -25,15 +26,15 @@ public class ViewModelProviderUtil {
     }
 
     private static ProvinceRepository getProvinceRepository(){
-        return ProvinceRepository.create(MainDatabase.newInstance().getProvinceDao(), ProvinceNetwork.create());
+        return ProvinceRepository.create(BaseApplication.database.getProvinceDao(), ProvinceNetwork.create());
     }
 
     private static CityRepository getCityRepository(){
-        return CityRepository.create(MainDatabase.newInstance().getCityDao(), CityNetwork.create());
+        return CityRepository.create(BaseApplication.database.getCityDao(), CityNetwork.create());
     }
 
     private static CountyRepository getCountyRepository() {
-        return CountyRepository.create(MainDatabase.newInstance().getCountyDao(), CountyNetwork.create());
+        return CountyRepository.create(BaseApplication.database.getCountyDao(), CountyNetwork.create());
     }
 
     public CityModelFactory getCityModelFactory(){
